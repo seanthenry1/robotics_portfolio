@@ -1,194 +1,85 @@
-# robotics_portfolio
-Project 1: Autonomous Boat Navigation Simulator
+# Robotics Software Learning Portfolio
 
-Since you're already into boating and fishing, this will likely keep your interest.
+This repository contains a collection of projects designed to build foundational robotics software engineering skills. The goal is to gain hands-on experience with perception, localization, mapping, planning, control systems, networking, and concurrent programming while creating practical portfolio projects.
 
-Skills learned:
+## Project 1: Robot Vacuum Simulator
 
-Path planning
-GPS navigation
-Sensor fusion
-Multithreading
-Networking
+### Overview
 
-Build:
+The Robot Vacuum Simulator models an autonomous cleaning robot operating in a virtual home environment. The robot must navigate through rooms, avoid obstacles, build a map of its surroundings, and return to a charging station when its cleaning task is complete.
 
-Simulate a boat on a lake map
-Add GPS noise
-Add wind/current effects
-Have the boat navigate to waypoints
+### Objectives
 
-Technologies:
+* Implement autonomous navigation
+* Build and maintain an environment map
+* Perform obstacle avoidance
+* Develop path planning algorithms
+* Simulate battery management and docking behavior
 
-C++
-Python visualization
-A*
-Threads
+### Technologies
 
-Stretch goal:
+* Python
+* Occupancy Grid Mapping
+* A* Path Planning
+* State Machines
 
-Simulate Stampede Reservoir or Alameda Harbor.
-Project 2: Robot Vacuum Simulator
+### Learning Outcomes
 
-This is one of the best beginner robotics projects.
+This project introduces several fundamental robotics concepts, including mapping, localization, navigation, and decision-making.
 
-Skills learned:
+---
 
-Mapping
-Localization
-Path planning
-State machines
+## Project 2: Multi-Threaded Robot Control System
 
-Build:
+### Overview
 
-Simulate a robot vacuum cleaning a house
-Discover rooms
-Avoid obstacles
-Return to charging dock
+This project simulates the software architecture of a modern robot by dividing responsibilities across multiple concurrent threads. Each thread performs a dedicated function while communicating with the rest of the system through shared data structures.
 
-Technologies:
+### Objectives
 
-Python
-ROS 2 later
-Occupancy grids
-A*
+* Design a concurrent robotics architecture
+* Implement thread-safe communication
+* Simulate sensor processing and control loops
+* Explore real-time software concepts
 
-Stretch goal:
+### System Architecture
 
-Generate random furniture layouts.
-Project 3: Multi-Threaded Robot Control System
+#### Camera Thread
 
-This directly builds on what you're learning in Operating Systems.
+Captures simulated sensor data and publishes observations to the system.
 
-Skills learned:
+#### Localization Thread
 
-Threads
-Synchronization
-Producer-consumer patterns
-Real-time systems
+Processes sensor information to estimate the robot's position and orientation.
 
-Architecture:
+#### Planning Thread
 
-Thread 1:
+Analyzes the robot's state and determines the next movement or action.
 
-Camera
+#### Motor Controller Thread
 
-Thread 2:
+Receives planned actions and translates them into simulated actuator commands.
 
-Localization
+### Technologies
 
-Thread 3:
+* C++
+* POSIX Threads (pthreads)
+* Mutexes
+* Condition Variables
 
-Planning
+### Learning Outcomes
 
-Thread 4:
+This project demonstrates how robotics systems coordinate multiple concurrent tasks such as sensing, planning, and control while maintaining data consistency and responsiveness.
 
-Motor controller
+---
 
-Use mutexes and condition variables to share data safely.
+## Future Expansion
 
-This project demonstrates concurrency, which robotics employers love seeing.
+Planned projects include:
 
-Project 4: Autonomous Fishing Spot Finder
+* Autonomous Boat Navigation Simulator
+* Camera-Based Object Tracking System
+* ROS 2 Delivery Robot
+* Warehouse Robot Fleet Simulator
 
-A unique portfolio project that connects your hobbies with robotics.
-
-Skills learned:
-
-Sensor fusion
-Decision making
-Data analysis
-Mapping
-
-Inputs:
-
-Wind
-Tide
-Water temperature
-Depth
-
-Output:
-
-Suggested fishing locations
-
-You could even expand it into a "captain's assistant" system.
-
-Project 5: Camera-Based Object Tracking Turret
-
-No real hardware required initially.
-
-Skills learned:
-
-Computer vision
-Control systems
-PID controllers
-
-Build:
-
-Webcam detects an object
-Virtual turret tracks it
-PID controller keeps it centered
-
-Technologies:
-
-Python
-OpenCV
-
-This introduces perception and control together.
-
-Project 6: Warehouse Robot Fleet Simulator
-
-This is closer to what companies actually deploy.
-
-Skills learned:
-
-Networking
-Distributed systems
-Multi-agent planning
-
-Build:
-
-10 robots
-Shared warehouse map
-Package pickup requests
-Collision avoidance
-
-Use sockets to allow robots to communicate.
-
-Project 7: ROS 2 Delivery Robot
-
-After you've completed some of the projects above.
-
-Skills learned:
-
-ROS 2
-Navigation stack
-Robotics middleware
-
-Build:
-
-Simulated robot
-Navigate hallways
-Avoid obstacles
-Deliver items
-
-This looks great on a resume because many robotics companies use ROS 2.
-
-Recommended Order
-Multi-threaded Robot Control System
-Robot Vacuum Simulator
-Autonomous Boat Navigation Simulator
-Object Tracking Turret
-ROS 2 Delivery Robot
-Warehouse Robot Fleet Simulator
-
-By the end, you'd have demonstrated:
-
-Concurrency
-Networking
-Algorithms
-Computer vision
-Control systems
-Robotics middleware
-
-That's a portfolio that can support applications for junior robotics software, autonomy, embedded, or simulation engineering roles even without a traditional robotics degree.
+Together, these projects will provide experience in robotics software architecture, computer vision, motion planning, networking, distributed systems, and robotic middleware.
