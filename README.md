@@ -1,287 +1,273 @@
-# Robotics Software Engineering Portfolio Roadmap
+# Robotics Software Engineering Portfolio
 
-## Recommended Learning Order
+## Overview
 
-The projects are organized to progressively build robotics software engineering skills. Each project introduces concepts that will be used in later projects.
+This portfolio consists of a series of projects designed to build practical robotics software engineering skills. The projects progressively introduce concepts such as concurrent programming, localization, mapping, path planning, computer vision, control systems, networking, distributed systems, and robotic middleware.
 
-### 1. Multi-Threaded Robot Control System
-
-**Primary Skills:** Concurrency, Threads, Synchronization, System Architecture
-
-This project establishes the software engineering foundation for robotics. Most robots have multiple subsystems operating simultaneously, making concurrent programming a critical skill.
-
-**Why First?**
-
-* Directly builds on Operating Systems concepts
-* Reinforces threads, mutexes, and synchronization
-* Teaches how robotics software is structured
+By completing these projects, you will develop a portfolio that demonstrates the foundational skills required for robotics software engineering, autonomy engineering, embedded systems development, and simulation engineering roles.
 
 ---
 
-### 2. Robot Vacuum Simulator
+# Recommended Project Order
 
-**Primary Skills:** Mapping, Localization, Path Planning, State Machines
+The projects are organized to build upon one another:
 
-This project introduces core robotics concepts in a manageable environment. Many robotics systems solve similar navigation problems.
+1. Multi-Threaded Robot Control System
+2. Robot Vacuum Simulator
+3. Autonomous Boat Navigation Simulator
+4. Camera-Based Object Tracking Turret
+5. ROS 2 Delivery Robot
+6. Warehouse Robot Fleet Simulator
+7. Autonomous Fishing Spot Finder
 
-**Why Second?**
-
-* Introduces autonomous navigation
-* Builds understanding of robot decision-making
-* Provides experience with mapping and planning algorithms
-
----
-
-### 3. Autonomous Boat Navigation Simulator
-
-**Primary Skills:** Navigation, Sensor Fusion, GPS Systems, Environmental Modeling
-
-This project expands navigation concepts into outdoor environments where uncertainty and environmental effects must be considered.
-
-**Why Third?**
-
-* Builds on path-planning knowledge from the vacuum simulator
-* Introduces noisy sensor data
-* Simulates real-world autonomous vehicle challenges
+This progression moves from software fundamentals to increasingly complex robotics systems.
 
 ---
 
-### 4. Camera-Based Object Tracking System
+# Project 1: Autonomous Boat Navigation Simulator
 
-**Primary Skills:** Computer Vision, Image Processing, PID Control
+## Overview
 
-This project introduces robotic perception and control systems.
+This project simulates an autonomous boat navigating through a virtual environment using GPS coordinates and waypoint-based navigation. Environmental factors such as wind, water currents, and sensor inaccuracies are incorporated to create realistic navigation challenges.
 
-**Why Fourth?**
+## Skills Learned
 
-* Adds perception capabilities to previous navigation skills
-* Introduces OpenCV and computer vision fundamentals
-* Demonstrates feedback control systems
+* Path Planning
+* GPS Navigation
+* Sensor Fusion
+* Multithreading
+* Networking
 
----
+## Project Goals
 
-### 5. ROS 2 Delivery Robot
+* Simulate a boat operating on a lake map
+* Introduce GPS noise and positioning errors
+* Model wind and water current effects
+* Navigate autonomously between waypoints
 
-**Primary Skills:** Robotics Middleware, System Integration, Autonomous Navigation
-
-This project combines many concepts learned previously into a professional robotics framework.
-
-**Why Fifth?**
-
-* ROS 2 becomes much easier after understanding planning, control, and perception
-* Demonstrates industry-standard robotics development
-* Integrates multiple robotic subsystems
-
----
-
-### 6. Warehouse Robot Fleet Simulator
-
-**Primary Skills:** Distributed Systems, Networking, Multi-Agent Coordination
-
-This project expands robotics from a single robot to multiple cooperating robots.
-
-**Why Sixth?**
-
-* Builds on navigation and ROS concepts
-* Introduces robot-to-robot communication
-* Demonstrates large-scale autonomous systems
-
----
-
-### 7. Autonomous Fishing Spot Recommendation System
-
-**Primary Skills:** Sensor Fusion, Decision Systems, Data Analysis
-
-This project applies robotics-style decision-making to environmental data.
-
-**Why Last?**
-
-* Serves as a unique portfolio project
-* Demonstrates problem-solving outside traditional robotics
-* Highlights personal interests while showcasing technical skills
-
----
-
-# Portfolio Projects
-
-## Project 1: Multi-Threaded Robot Control System
-
-### Overview
-
-This project simulates the internal software architecture of a modern robot. Independent threads handle sensing, localization, planning, and control while communicating through shared data structures.
-
-### Objectives
-
-* Design a concurrent robotic software system
-* Implement thread-safe communication
-* Simulate real-time data processing
-* Explore synchronization techniques
-
-### Technologies
+## Technologies
 
 * C++
-* POSIX Threads (pthreads)
-* Mutexes
-* Condition Variables
-* Linux
+* Python Visualization
+* A* Path Planning
+* Multithreading
 
-### Learning Outcomes
+## Stretch Goal
 
-* Concurrency
-* Synchronization
-* Inter-thread communication
-* Real-time software concepts
+Create simulations based on real-world locations such as Stampede Reservoir or Alameda Harbor.
 
 ---
 
-## Project 2: Robot Vacuum Simulator
+# Project 2: Robot Vacuum Simulator
 
-### Overview
+## Overview
 
-The Robot Vacuum Simulator models an autonomous cleaning robot operating in a virtual home environment.
+This project simulates an autonomous robot vacuum operating inside a home environment. The robot must discover rooms, avoid obstacles, clean efficiently, and return to a charging station.
 
-### Technologies
+## Skills Learned
+
+* Mapping
+* Localization
+* Path Planning
+* State Machines
+
+## Project Goals
+
+* Simulate autonomous cleaning behavior
+* Discover and map rooms
+* Avoid obstacles and furniture
+* Return to a charging dock when complete
+
+## Technologies
 
 * Python
 * Occupancy Grid Mapping
 * A* Path Planning
-* State Machines
+* ROS 2 (future enhancement)
 
-### Learning Outcomes
+## Stretch Goal
 
+Generate random furniture layouts and have the robot adapt to new environments.
+
+---
+
+# Project 3: Multi-Threaded Robot Control System
+
+## Overview
+
+This project simulates the internal software architecture of a robot by dividing responsibilities among multiple concurrent threads. It directly applies concepts learned in operating systems and concurrent programming.
+
+## Skills Learned
+
+* Threads
+* Synchronization
+* Producer-Consumer Patterns
+* Real-Time Systems
+
+## System Architecture
+
+### Thread 1: Camera
+
+Captures sensor information and publishes observations.
+
+### Thread 2: Localization
+
+Processes sensor data and estimates robot position.
+
+### Thread 3: Planning
+
+Determines the robot's next action and movement goals.
+
+### Thread 4: Motor Controller
+
+Converts plans into actuator commands.
+
+## Implementation Details
+
+Use mutexes and condition variables to safely share data between threads.
+
+## Learning Outcome
+
+This project demonstrates concurrency and system architecture concepts that are highly valued in robotics software engineering.
+
+---
+
+# Project 4: Autonomous Fishing Spot Finder
+
+## Overview
+
+This project combines environmental data and decision-making algorithms to identify promising fishing locations. It is a unique portfolio project that blends robotics concepts with a personal interest in boating and fishing.
+
+## Skills Learned
+
+* Sensor Fusion
+* Decision Making
+* Data Analysis
 * Mapping
-* Localization
-* Navigation
-* Autonomous decision-making
+
+## Inputs
+
+* Wind Conditions
+* Tide Information
+* Water Temperature
+* Water Depth
+
+## Output
+
+* Recommended Fishing Locations
+
+## Future Expansion
+
+Expand the project into a digital "Captain's Assistant" capable of providing fishing recommendations and environmental analysis.
 
 ---
 
-## Project 3: Autonomous Boat Navigation Simulator
+# Project 5: Camera-Based Object Tracking Turret
 
-### Overview
+## Overview
 
-A simulated autonomous vessel navigates between waypoints while compensating for environmental conditions such as wind and currents.
+This project uses computer vision to detect and track an object in real time. A virtual turret uses feedback control to keep the target centered within the camera view.
 
-### Technologies
+## Skills Learned
 
-* C++
-* Python Visualization
-* GPS Coordinate Systems
-* Sensor Fusion Concepts
-* A* Path Planning
+* Computer Vision
+* Control Systems
+* PID Controllers
 
-### Learning Outcomes
+## Project Goals
 
-* Localization
-* Route planning
-* Environmental modeling
-* Autonomous navigation
+* Detect objects using a webcam
+* Track target movement
+* Implement PID-based feedback control
+* Maintain target lock
 
----
-
-## Project 4: Camera-Based Object Tracking System
-
-### Overview
-
-A computer vision system detects and tracks objects in real time while maintaining target lock using feedback control.
-
-### Technologies
+## Technologies
 
 * Python
 * OpenCV
-* PID Controllers
 
-### Learning Outcomes
+## Learning Outcome
 
-* Computer vision
-* Perception systems
-* Feedback control
-* Real-time processing
+This project introduces robotic perception and control systems while combining computer vision with real-time feedback loops.
 
 ---
 
-## Project 5: ROS 2 Delivery Robot
+# Project 6: Warehouse Robot Fleet Simulator
 
-### Overview
+## Overview
 
-An autonomous mobile robot capable of navigating hallways, avoiding obstacles, and delivering items between locations.
+This project simulates multiple autonomous warehouse robots working together to complete transportation tasks while avoiding collisions and sharing resources.
 
-### Technologies
+## Skills Learned
+
+* Networking
+* Distributed Systems
+* Multi-Agent Planning
+
+## Project Goals
+
+* Simulate a fleet of ten robots
+* Maintain a shared warehouse map
+* Assign package pickup and delivery tasks
+* Prevent collisions between robots
+
+## Implementation Details
+
+Use network sockets to allow robots to communicate and coordinate actions.
+
+## Learning Outcome
+
+This project introduces distributed robotics concepts commonly found in modern warehouse automation systems.
+
+---
+
+# Project 7: ROS 2 Delivery Robot
+
+## Overview
+
+This project implements a simulated delivery robot using ROS 2. The robot navigates hallways, avoids obstacles, and delivers items between locations.
+
+## Skills Learned
 
 * ROS 2
-* C++
-* Python
-* Gazebo
 * Navigation Stack
+* Robotics Middleware
 
-### Learning Outcomes
+## Project Goals
 
-* ROS 2 development
-* Robotic middleware
-* System integration
-* Autonomous navigation
+* Create a simulated robot
+* Navigate autonomously through hallways
+* Avoid obstacles
+* Deliver items to designated locations
 
----
+## Technologies
 
-## Project 6: Warehouse Robot Fleet Simulator
-
-### Overview
-
-A fleet of autonomous warehouse robots collaborate to complete transportation tasks while avoiding collisions and sharing resources.
-
-### Technologies
-
-* C++
-* Python
-* TCP/IP Sockets
-* Distributed Systems Concepts
-
-### Learning Outcomes
-
-* Multi-agent systems
-* Networking
-* Distributed systems
-* Fleet coordination
-
----
-
-## Project 7: Autonomous Fishing Spot Recommendation System
-
-### Overview
-
-A decision-support system that analyzes environmental conditions and recommends productive fishing locations.
-
-### Technologies
-
-* Python
-* APIs
-* Data Analysis
-* Geographic Data Processing
-
-### Learning Outcomes
-
-* Sensor fusion concepts
-* Decision systems
-* Data analytics
-* Environmental modeling
-
----
-
-# Final Outcome
-
-Upon completion of this roadmap, the portfolio will demonstrate experience with:
-
-* C++ and Python
-* Linux Development
-* Concurrent Programming
-* Robotics Software Architecture
-* Computer Vision
-* Localization and Mapping
-* Path Planning
-* Control Systems
 * ROS 2
+* Python
+* C++
+* Gazebo Simulation Environment
+
+## Learning Outcome
+
+This project demonstrates proficiency with industry-standard robotics software and middleware used throughout the robotics industry.
+
+---
+
+# Portfolio Outcomes
+
+By completing these projects, the portfolio will demonstrate proficiency in:
+
+* Concurrent Programming
 * Networking
+* Algorithms
+* Computer Vision
+* Control Systems
+* Robotics Middleware
+* Localization
+* Mapping
+* Path Planning
+* Sensor Fusion
 * Distributed Systems
 * Autonomous Navigation
 
-The progression is designed to move from software fundamentals to advanced robotics systems while producing a portfolio that aligns with entry-level robotics software engineering roles.
+Together, these projects create a strong foundation for pursuing junior-level roles in robotics software engineering, autonomy engineering, embedded systems, or simulation engineering, even without a traditional robotics degree.
