@@ -130,14 +130,14 @@ Use mutexes and condition variables to safely share data between threads.
 
 This project demonstrates concurrency and system architecture concepts that are highly valued in robotics software engineering.
 
-##Technologies
+## Technologies
 
-C
-POSIX Threads (pthreads)
-Mutexes
-Condition Variables
-Linux
-Makefiles
+* C
+* POSIX Threads (pthreads)
+* Mutexes
+* Condition Variables
+* Linux
+* Makefiles
 
 ---
 
